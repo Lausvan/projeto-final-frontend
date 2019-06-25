@@ -1,0 +1,62 @@
+<form [formGroup]="formulario">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+            <mat-form-field appearance="outline">
+                <mat-label>Codigo de Barras</mat-label>
+                <input type="text" matInput formControlName="codigoBarra">
+
+
+                <mat-error *ngIf="formulario.get('codigoBarra').hasError('required')">
+                  Campo Obrigatório
+                </mat-error>
+
+              </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput formControlName="nome">
+
+
+                <mat-error *ngIf="formulario.get('nome').hasError('required')">
+                  Campo Obrigatório
+                </mat-error>
+
+              </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+            <mat-form-field appearance="outline">
+                <mat-label>Preço</mat-label>
+                <input type="text" matInput formControlName="preco">
+
+                <mat-error *ngIf="formulario.get('preco').hasError('required')">
+                    Campo Obrigatório
+                  </mat-error>
+            </mat-form-field>
+
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+            <mat-form-field appearance="outline">
+                <mat-label>Fornecedor</mat-label>
+                <input type="text" matInput formControlName="fornecedor">
+
+
+                <mat-error *ngIf="formulario.get('fornecedor').hasError('required')">
+                  Campo Obrigatório
+                </mat-error>
+
+              </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+            <button mat-raised-button >Enviar Formulário</button>
+        </div>
+
+
+
+    </div>
+
+  </form>
