@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { ListaFornecedorComponent } from './layout/fornecedor/lista-fornecedor/lista-fornecedor.component';
+import { CadastraFornecedorComponent } from './layout/fornecedor/cadastra-fornecedor/cadastra-fornecedor.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
     ClienteComponent,
     ProdutoComponent,
     FarmaceuticoComponent,
-    ContainerComponent
+    ContainerComponent,
+    ListaFornecedorComponent,
+    CadastraFornecedorComponent
 
   ],
   imports: [

@@ -11,7 +11,8 @@
 header{
   padding: 22px;
   grid-area: header;
-  background-image: linear-gradient(-90deg,  rgb(7, 82, 10),rgb(142, 214, 154));
+  //background-image: linear-gradient(-90deg,  rgb(7, 82, 10),rgb(142, 214, 154));
+  background-color: darkcyan;
 }
 
 main{
@@ -20,7 +21,7 @@ main{
 }
 nav{
   grid-area: nav;
- background-color: darkgrey;
+ background-color: gray;
 }
 ul{
   list-style: none;

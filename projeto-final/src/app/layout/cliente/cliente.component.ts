@@ -19,7 +19,7 @@ export class ClienteComponent implements OnInit {
       nome: [null, Validators.required],
       cpf: [null, Validators.required],
       telefone: [null],
-      email: [null],
+      email: [null, Validators.email],
       endereco: [null],
       cidade: [null],
       estado: [null],
