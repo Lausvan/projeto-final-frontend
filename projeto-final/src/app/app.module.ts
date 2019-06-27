@@ -15,6 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { ListaFornecedorComponent } from './layout/fornecedor/lista-fornecedor/lista-fornecedor.component';
 import { CadastraFornecedorComponent } from './layout/fornecedor/cadastra-fornecedor/cadastra-fornecedor.component';
+import { MatTableModule} from '@angular/material/table';
+import { ListaProdutoComponent } from './layout/produto/lista-produto/lista-produto.component';
+import { CadastraProdutoComponent } from './layout/produto/cadastra-produto/cadastra-produto.component';
+import { ListaFarmaceuticoComponent } from './layout/farmaceutico/lista-farmaceutico/lista-farmaceutico.component';
+import { CadastraFarmaceuticoComponent } from './layout/farmaceutico/cadastra-farmaceutico/cadastra-farmaceutico.component';
+import { ListaClienteComponent } from './layout/cliente/lista-cliente/lista-cliente.component';
+import { CadastraClienteComponent } from './layout/cliente/cadastra-cliente/cadastra-cliente.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +34,13 @@ import { CadastraFornecedorComponent } from './layout/fornecedor/cadastra-fornec
     FarmaceuticoComponent,
     ContainerComponent,
     ListaFornecedorComponent,
-    CadastraFornecedorComponent
+    CadastraFornecedorComponent,
+    ListaProdutoComponent,
+    CadastraProdutoComponent,
+    ListaFarmaceuticoComponent,
+    CadastraFarmaceuticoComponent,
+    ListaClienteComponent,
+    CadastraClienteComponent
 
   ],
   imports: [
@@ -35,7 +49,9 @@ import { CadastraFornecedorComponent } from './layout/fornecedor/cadastra-fornec
     ReactiveFormsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

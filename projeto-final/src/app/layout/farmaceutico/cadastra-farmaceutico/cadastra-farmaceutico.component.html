@@ -1,0 +1,43 @@
+<form [formGroup]="formulario">
+  <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+          <mat-form-field appearance="outline">
+              <mat-label>Nome</mat-label>
+              <input type="text" matInput formControlName="nome">
+
+
+              <mat-error *ngIf="formulario.get('nome').hasError('required')">
+                Campo Obrigatório
+              </mat-error>
+
+            </mat-form-field>
+      </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+          <mat-form-field appearance="outline">
+              <mat-label>Telefone</mat-label>
+              <input type="tel" matInput formControlName="telefone">
+
+
+              <mat-error *ngIf="formulario.get('nome').hasError('required')">
+                Campo Obrigatório
+              </mat-error>
+
+            </mat-form-field>
+      </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+          <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input type="email" matInput formControlName="email">
+            </mat-form-field>
+      </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+        <button mat-raised-button color="warn">Enviar Cadastro</button>
+      </div>
+
+
+  </div>
+
+</form>

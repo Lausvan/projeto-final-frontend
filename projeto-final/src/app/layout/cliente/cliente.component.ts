@@ -8,23 +8,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ClienteComponent implements OnInit {
 
-  formulario: FormGroup;
-
   constructor(
-    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
-    this.formulario = this.formBuilder.group({
-      nome: [null, Validators.required],
-      cpf: [null, Validators.required],
-      telefone: [null],
-      email: [null, Validators.email],
-      endereco: [null],
-      cidade: [null],
-      estado: [null],
-      limiteCompra: [null, Validators.required]
-    });
   }
 
 }

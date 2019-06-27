@@ -1,3 +1,9 @@
+import { CadastraClienteComponent } from './layout/cliente/cadastra-cliente/cadastra-cliente.component';
+import { ListaClienteComponent } from './layout/cliente/lista-cliente/lista-cliente.component';
+import { CadastraFarmaceuticoComponent } from './layout/farmaceutico/cadastra-farmaceutico/cadastra-farmaceutico.component';
+import { ListaFarmaceuticoComponent } from './layout/farmaceutico/lista-farmaceutico/lista-farmaceutico.component';
+import { CadastraProdutoComponent } from './layout/produto/cadastra-produto/cadastra-produto.component';
+import { ListaProdutoComponent } from './layout/produto/lista-produto/lista-produto.component';
 import { FornecedorComponent } from './layout/fornecedor/fornecedor.component';
 import { ListaFornecedorComponent } from './layout/fornecedor/lista-fornecedor/lista-fornecedor.component';
 import { TelaInicialComponent } from './layout/tela-inicial/tela-inicial.component';
@@ -15,10 +21,22 @@ const routes: Routes = [
     {path: 'cadastro', component: CadastraFornecedorComponent},
     {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]},
-  {path: 'cadastro-produto', component: ProdutoComponent},
-  {path: 'cadastro-farmaceutico', component: FarmaceuticoComponent},
+  {path: 'cadastro-produto', component: ProdutoComponent, children: [
+    {path: 'lista', component: ListaProdutoComponent},
+    {path: 'cadastro', component: CadastraProdutoComponent},
+    {path: '', redirectTo: 'lista', pathMatch: 'full'}
+  ]},
+  {path: 'farmaceutico', component: FarmaceuticoComponent, children: [
+    {path: 'lista', component: ListaFarmaceuticoComponent},
+    {path: 'cadastro', component: CadastraFarmaceuticoComponent},
+    {path: '', redirectTo: 'lista', pathMatch: 'full'}
+  ]},
   {path: 'tela-inicial', component: TelaInicialComponent},
-  {path: 'cadastro-cliente', component: ClienteComponent}
+  {path: 'cliente', component: ClienteComponent, children: [
+    {path: 'lista', component: ListaClienteComponent},
+    {path: 'cadastro', component: CadastraClienteComponent},
+    {path: '', redirectTo: 'lista', pathMatch: 'full'}
+  ]}
 ];
 
 @NgModule({
