@@ -19,23 +19,29 @@ const routes: Routes = [
   {path: 'fornecedor', component: FornecedorComponent, children: [
     {path: 'lista', component: ListaFornecedorComponent},
     {path: 'cadastro', component: CadastraFornecedorComponent},
+    {path: 'cadastro/:id', component: CadastraFornecedorComponent},
+
     {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]},
   {path: 'cadastro-produto', component: ProdutoComponent, children: [
     {path: 'lista', component: ListaProdutoComponent},
     {path: 'cadastro', component: CadastraProdutoComponent},
+    {path: 'cadastro/:id', component: CadastraProdutoComponent},
+
     {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]},
   {path: 'farmaceutico', component: FarmaceuticoComponent, children: [
     {path: 'lista', component: ListaFarmaceuticoComponent},
     {path: 'cadastro', component: CadastraFarmaceuticoComponent},
+    {path: 'cadastro/:id', component: CadastraFarmaceuticoComponent},
     {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]},
   {path: 'tela-inicial', component: TelaInicialComponent},
   {path: 'cliente', component: ClienteComponent, children: [
-    {path: 'lista', component: ListaClienteComponent},
-    {path: 'cadastro', component: CadastraClienteComponent},
-    {path: '', redirectTo: 'lista', pathMatch: 'full'}
+  {path: 'lista', component: ListaClienteComponent},
+  {path: 'cadastro', component: CadastraClienteComponent},
+  {path: 'cadastro/:id', component: CadastraClienteComponent},
+  {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]}
 ];
 

@@ -16,10 +16,10 @@
       <div class="mdl-cell mdl-cell--6-col">
           <mat-form-field appearance="outline">
               <mat-label>Nome Fantasia</mat-label>
-              <input type="text" matInput formControlName="nomeFantasia">
+              <input type="text" matInput formControlName="nome">
 
 
-              <mat-error *ngIf="formulario.get('nomeFantasia').hasError('required')">
+              <mat-error *ngIf="formulario.get('nome').hasError('required')">
                 Campo Obrigatório
               </mat-error>
 
@@ -29,9 +29,9 @@
       <div class="mdl-cell mdl-cell--6-col">
           <mat-form-field appearance="outline">
               <mat-label>CNPJ</mat-label>
-              <input type="tel" matInput formControlName="cnpj">
+              <input type="text" matInput formControlName="documento">
 
-              <mat-error *ngIf="formulario.get('cnpj').hasError('required')">
+              <mat-error *ngIf="formulario.get('documento').hasError('required')">
                   Campo Obrigatório
                 </mat-error>
 
@@ -67,7 +67,12 @@
       </div>
 
       <div class="mdl-cell mdl-cell--12-col">
-        <button mat-raised-button color="warn">Enviar Cadastro</button>
+        <button mat-raised-button color="warn" (click)="onSubmit()">Enviar Cadastro</button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+        <button *ngIf="this.formulario.value.id"  mat-raised-button color="warn" routerLink="../../lista">Voltar</button>
+        <button *ngIf="!this.formulario.value.id"  mat-raised-button color="warn" routerLink="../lista">Voltar</button>
       </div>
 
 

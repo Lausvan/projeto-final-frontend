@@ -1,4 +1,7 @@
+import { ProdutoServiceService } from './../../../services/produto-service.service';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-lista-produto',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaProdutoComponent implements OnInit {
 
-  constructor() { }
+  subs: Subscription;
+  produtos: any;
+  displayedColumns: string[] = ['id', 'nome', 'action', 'deletar'];
+
+  constructor(private service: ProdutoServiceService) { }
 
   ngOnInit() {
+    this.buscarClientes();
+  }
+
+  applyFilter(filterValue: string) {
+    this.produtos.filter = filterValue.trim().toLowerCase();
+  }
+
+  deletar(id: number) {
+    this.service.deletar(id).subscribe(() => {
+      console.log('removeu');
+      this.buscarClientes();
+    });
+  }
+
+  private buscarClientes() {
+    this.subs = this.service.buscarTodos().subscribe(data => {
+      console.log(data);
+      this.produtos = new MatTableDataSource(data);
+    });
   }
 
 }
