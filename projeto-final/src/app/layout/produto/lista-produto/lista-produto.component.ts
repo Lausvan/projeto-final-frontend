@@ -17,7 +17,7 @@ export class ListaProdutoComponent implements OnInit {
   constructor(private service: ProdutoServiceService) { }
 
   ngOnInit() {
-    this.buscarClientes();
+    this.buscarProdutos();
   }
 
   applyFilter(filterValue: string) {
@@ -27,11 +27,11 @@ export class ListaProdutoComponent implements OnInit {
   deletar(id: number) {
     this.service.deletar(id).subscribe(() => {
       console.log('removeu');
-      this.buscarClientes();
+      this.buscarProdutos();
     });
   }
 
-  private buscarClientes() {
+  private buscarProdutos() {
     this.subs = this.service.buscarTodos().subscribe(data => {
       console.log(data);
       this.produtos = new MatTableDataSource(data);

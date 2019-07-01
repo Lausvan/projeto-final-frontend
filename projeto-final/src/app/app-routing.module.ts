@@ -20,14 +20,12 @@ const routes: Routes = [
     {path: 'lista', component: ListaFornecedorComponent},
     {path: 'cadastro', component: CadastraFornecedorComponent},
     {path: 'cadastro/:id', component: CadastraFornecedorComponent},
-
     {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]},
   {path: 'cadastro-produto', component: ProdutoComponent, children: [
     {path: 'lista', component: ListaProdutoComponent},
     {path: 'cadastro', component: CadastraProdutoComponent},
     {path: 'cadastro/:id', component: CadastraProdutoComponent},
-
     {path: '', redirectTo: 'lista', pathMatch: 'full'}
   ]},
   {path: 'farmaceutico', component: FarmaceuticoComponent, children: [

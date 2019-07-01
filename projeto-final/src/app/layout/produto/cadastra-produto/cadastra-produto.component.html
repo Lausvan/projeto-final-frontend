@@ -1,12 +1,12 @@
-<form [formGroup]="formulario">
+<form  [formGroup]="formulario">
   <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--6-col">
           <mat-form-field appearance="outline">
               <mat-label>Codigo de Barras</mat-label>
-              <input type="text" matInput formControlName="codigoBarra">
+              <input type="text" matInput formControlName="codigoBarras">
 
 
-              <mat-error *ngIf="formulario.get('codigoBarra').hasError('required')">
+              <mat-error *ngIf="formulario.get('codigoBarras').hasError('required')">
                 Campo Obrigatório
               </mat-error>
 
@@ -39,20 +39,28 @@
       </div>
 
       <div class="mdl-cell mdl-cell--6-col">
-          <mat-form-field appearance="outline">
-              <mat-label>Fornecedor</mat-label>
-              <input type="text" matInput formControlName="fornecedor">
-
-
-              <mat-error *ngIf="formulario.get('fornecedor').hasError('required')">
-                Campo Obrigatório
-              </mat-error>
-
-            </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input
+            placeholder="Fornecedor"
+            aria-label="Number"
+            matInput
+            [matAutocomplete]="auto"
+            formControlName="fornecedor">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="formatter">
+            <mat-option *ngFor="let fornecedor of fornecedoresFiltrados | async" [value]="fornecedor">
+              {{fornecedor.nome}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
       </div>
 
       <div class="mdl-cell mdl-cell--6-col">
-        <button mat-raised-button color="warn">Enviar Cadastro</button>
+        <button mat-raised-button color="warn" (click)="onSubmit()">Enviar Cadastro</button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+        <button *ngIf="this.formulario.value.id"  mat-raised-button color="warn" routerLink="../../lista">Voltar</button>
+        <button *ngIf="!this.formulario.value.id"  mat-raised-button color="warn" routerLink="../lista">Voltar</button>
       </div>
 
   </div>

@@ -23,6 +23,7 @@ import { CadastraFarmaceuticoComponent } from './layout/farmaceutico/cadastra-fa
 import { ListaClienteComponent } from './layout/cliente/lista-cliente/lista-cliente.component';
 import { CadastraClienteComponent } from './layout/cliente/cadastra-cliente/cadastra-cliente.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatButtonModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

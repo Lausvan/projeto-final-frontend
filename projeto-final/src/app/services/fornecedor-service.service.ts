@@ -32,6 +32,13 @@ export class FornecedorServiceService {
 
   }
 
+  buscarPorNome(value: string): Observable<fornecedorDTO[]> {
+    if (value) {
+      return this.http.get<fornecedorDTO[]>(`${this.url}/busca-por-nome/${value}`).pipe(take(1));
+    }
+    return of([]);
+  }
+
   deletar(id: number): Observable<any> {
     return this.http.delete(`${this.url}/${id}`).pipe(take(1));
   }
